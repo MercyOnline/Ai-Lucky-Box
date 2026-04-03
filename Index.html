@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlock Your Lucky AI Gift | AI Learning Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="bg-glow top-left"></div>
+    <div class="bg-glow bottom-right"></div>
+
+    <header class="header">
+        <img src="https://i.ibb.co/5hgtxqXt/Picsart-26-04-02-20-42-30-601.jpg" alt="AI Learning Hub Logo" class="logo">
+    </header>
+
+    <main class="container">
+        
+        <section id="claimed-section" class="glass-card hidden animate-fade-in">
+            <h2>Offer Claimed</h2>
+            <p>You have already unlocked your lucky gift on this browser/device.</p>
+            <p class="small-note">Thank you for participating with AI Learning Hub!</p>
+        </section>
+
+        <div id="main-content">
+            
+            <section class="hero animate-slide-up">
+                <h1 class="title">Unlock Your <span class="gold-text">Lucky AI Gift</span></h1>
+                <p class="subtitle">Enter your details below and unlock a special luxury gift from AI Learning Hub.</p>
+                
+                <div class="trust-badges">
+                    <span class="badge">✨ Free Entry</span>
+                    <span class="badge">🎯 One Lucky Chance</span>
+                    <span class="badge">🎁 Instant Reveal</span>
+                    <span class="badge">📱 Claim on WhatsApp</span>
+                </div>
+            </section>
+
+            <section id="form-section" class="glass-card form-container animate-slide-up delay-1">
+                <form id="lead-form">
+                    <div class="input-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" required placeholder="John Doe">
+                    </div>
+                    
+                    <div class="input-row">
+                        <div class="input-group">
+                            <label for="age">Age</label>
+                            <input type="number" id="age" required placeholder="25" min="10" max="100">
+                        </div>
+                        <div class="input-group">
+                            <label for="city">City</label>
+                            <input type="text" id="city" required placeholder="Colombo">
+                        </div>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="whatsapp">WhatsApp Number</label>
+                        <input type="tel" id="whatsapp" required placeholder="07XXXXXXXX">
+                    </div>
+
+                    <div class="input-group">
+                        <label>Interested to Learn AI Course?</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="aiInterest" value="Yes" required> Yes
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="aiInterest" value="No"> No
+                            </label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="gold-btn">Unlock My Gift Now</button>
+                </form>
+            </section>
+
+            <section id="lucky-box-section" class="hidden">
+                <div class="glass-card text-center box-container animate-fade-in">
+                    <h2 class="gold-text">Your Gift is Ready!</h2>
+                    <p class="box-instruction">Tap the glowing box below to unlock your lucky gift.</p>
+                    
+                    <div class="gift-box-wrapper" id="gift-box">
+                        <div class="box-glow"></div>
+                        <div class="box-icon">🎁</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="result-section" class="hidden">
+                <div class="glass-card text-center result-container animate-fade-in">
+                    <h2 class="congrats-text">Congratulations!</h2>
+                    <p>You unlocked:</p>
+                    <div class="reward-highlight" id="reward-name">[Reward Name]</div>
+                    
+                    <div class="instruction-box">
+                        <p>📸 <strong>Take a screenshot of your gift</strong> and submit it on WhatsApp to claim!</p>
+                    </div>
+
+                    <button id="claim-btn" class="gold-btn pulse-anim">Claim on WhatsApp</button>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <img src="https://i.ibb.co/5hgtxqXt/Picsart-26-04-02-20-42-30-601.jpg" alt="AI Learning Hub Logo" class="footer-logo">
+        <p class="brand-name">AI Learning Hub</p>
+        <p class="whatsapp-contact">WhatsApp: 0712831346</p>
+        <p class="small-note">Offers are subject to availability. T&C Apply.</p>
+    </footer>
+
+    <div id="popup-overlay" class="overlay hidden">
+        <div id="popup-content" class="popup glass-card">
+            <h3 id="popup-title" class="gold-text">Message</h3>
+            <p id="popup-text">Details Submitted</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

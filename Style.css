@@ -1,0 +1,350 @@
+/* --- Variables --- */
+:root {
+    --bg-dark: #070B14;
+    --card-bg: rgba(18, 28, 48, 0.65);
+    --card-border: rgba(255, 255, 255, 0.1);
+    --gold-primary: #D4AF37;
+    --gold-light: #FBF5B7;
+    --gold-gradient: linear-gradient(135deg, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+    --text-main: #FFFFFF;
+    --text-muted: #A0B0C0;
+    --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.3);
+    --transition: all 0.3s ease;
+}
+
+/* --- Global Resets & Typography --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    background-image: radial-gradient(circle at 50% 0%, #152340 0%, #070B14 70%);
+    color: var(--text-main);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    position: relative;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
+/* --- Background Effects --- */
+.bg-glow {
+    position: fixed;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+.bg-glow.top-left { top: -100px; left: -100px; }
+.bg-glow.bottom-right { bottom: -100px; right: -100px; }
+
+/* --- Layout --- */
+.header {
+    text-align: center;
+    padding: 30px 20px;
+}
+.logo {
+    width: 120px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    border: 1px solid var(--card-border);
+}
+
+.container {
+    flex: 1;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Glassmorphism Card --- */
+.glass-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--card-border);
+    border-radius: 20px;
+    padding: 35px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+}
+
+/* --- Hero Section --- */
+.hero {
+    text-align: center;
+    margin-bottom: 30px;
+}
+.title {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.gold-text {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+}
+.subtitle {
+    color: var(--text-muted);
+    font-size: 1rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+.trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+.badge {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    color: var(--gold-light);
+}
+
+/* --- Form Styles --- */
+.form-container { margin-bottom: 20px; }
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+.input-row {
+    display: flex;
+    gap: 15px;
+}
+.input-row .input-group { flex: 1; }
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+    color: var(--gold-light);
+    font-weight: 600;
+}
+input[type="text"], input[type="number"], input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    color: var(--text-main);
+    font-size: 1rem;
+    outline: none;
+    transition: var(--transition);
+}
+input:focus {
+    border-color: var(--gold-primary);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+}
+.radio-group {
+    display: flex;
+    gap: 20px;
+    padding: 10px 0;
+}
+.radio-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    color: var(--text-main);
+    font-weight: 400;
+}
+
+/* --- Buttons --- */
+.gold-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--gold-gradient);
+    color: #000;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: var(--shadow-glow);
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.gold-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.6);
+}
+
+/* --- Lucky Box Section --- */
+.text-center { text-align: center; }
+.box-instruction {
+    color: var(--text-muted);
+    margin: 10px 0 30px;
+}
+.gift-box-wrapper {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: var(--transition);
+}
+.gift-box-wrapper:hover {
+    transform: scale(1.05);
+}
+.box-glow {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%; height: 100%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.6) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+    z-index: 1;
+}
+.box-icon {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 6rem;
+    z-index: 2;
+    animation: bounce 3s infinite;
+}
+.box-icon.shake {
+    animation: shake 0.5s ease-in-out infinite;
+}
+
+/* --- Result Section --- */
+.congrats-text {
+    font-size: 2.2rem;
+    color: var(--gold-primary);
+    margin-bottom: 10px;
+}
+.reward-highlight {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 20px 0;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid var(--gold-primary);
+    border-radius: 15px;
+    color: var(--gold-light);
+    box-shadow: inset 0 0 20px rgba(212, 175, 55, 0.1);
+}
+.instruction-box {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* --- Footer --- */
+.footer {
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: auto;
+    border-top: 1px solid var(--card-border);
+    background: rgba(0,0,0,0.3);
+}
+.footer-logo {
+    width: 60px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.brand-name {
+    font-weight: 700;
+    color: var(--gold-light);
+}
+.whatsapp-contact {
+    color: var(--text-main);
+    margin: 5px 0;
+}
+.small-note {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 10px;
+}
+
+/* --- Popups --- */
+.overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+.overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+.popup {
+    text-align: center;
+    max-width: 90%;
+    width: 400px;
+    transform: scale(1);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.overlay.hidden .popup {
+    transform: scale(0.8);
+}
+.popup h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+}
+.popup p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+}
+
+/* --- Utility & Animations --- */
+.hidden { display: none !important; }
+
+@keyframes pulse {
+    0% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.9); opacity: 0.7; }
+}
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translate(-50%, -50%); }
+    40% { transform: translate(-50%, -70%); }
+    60% { transform: translate(-50%, -60%); }
+}
+@keyframes shake {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    25% { transform: translate(-50%, -50%) rotate(-10deg) scale(1.1); }
+    50% { transform: translate(-50%, -50%) rotate(10deg) scale(1.1); }
+    75% { transform: translate(-50%, -50%) rotate(-10deg) scale(1.1); }
+    100% { transform: translate(-50%, -50%) rotate(0deg) scale(1); }
+}
+.animate-fade-in { animation: fadeIn 0.8s forwards; }
+.animate-slide-up { animation: slideUp 0.8s forwards; }
+.delay-1 { animation-delay: 0.2s; opacity: 0; }
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
